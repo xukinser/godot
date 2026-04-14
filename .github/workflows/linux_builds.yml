@@ -87,15 +87,15 @@ jobs:
           - name: Template w/ Mono, release (target=template_release)
             cache-name: linux-template-mono
             target: template_release
-            scons-flags: module_mono_enabled=yes
-            bin: ./bin/godot.linuxbsd.template_release.x86_64.mono
+            scons-flags: module_mono_enabled=yes arch=arm64
+            bin: ./bin/godot.linuxbsd.template_release.arm64.mono
             artifact: true
 
           - name: Template w/ Mono, debug (target=template_debug)
             cache-name: linux-template-mono-debug
             target: template_debug
-            scons-flags: module_mono_enabled=yes
-            bin: ./bin/godot.linuxbsd.template_debug.x86_64.mono
+            scons-flags: module_mono_enabled=yes arch=arm64
+            bin: ./bin/godot.linuxbsd.template_debug.arm64.mono
             artifact: true
 
           - name: Minimal template (target=template_release, everything disabled)
@@ -111,7 +111,8 @@ jobs:
               deprecated=no
               minizip=no
               brotli=no
-            bin: ./bin/godot.linuxbsd.template_release.x86_64
+              arch=arm64
+            bin: ./bin/godot.linuxbsd.template_release.arm64
             artifact: true
 
     steps:
